@@ -8,7 +8,7 @@ endif()
 project ("HW_04_SFINAE")
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (hw_04cli "main.cpp" "main.h")
+add_executable (hw_04cli "main.cpp" "main.h" "print_ip.h" )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET hw_04cli PROPERTY CXX_STANDARD 20)
