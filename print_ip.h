@@ -7,9 +7,7 @@ using namespace std;
 
 // This used for int types.
 template<typename T>
-typename 
-enable_if_t
-<is_signed<T>::value || is_signed<T>::value, void>
+enable_if_t<is_signed<T>::value || is_signed<T>::value, void>
 print_ip(T int_value)
 {
 	string result = "";
@@ -32,7 +30,7 @@ print_ip(T int_value)
 
 // This used for std::string.
 template<typename T>
-// typename std::enable_if_t<std::is_same<T, std::string>::value, void> - variant similar to the other two
+// typename enable_if_t<is_same<T, string>::value, void> - variant similar to the other two
 auto print_ip(T str_value) -> decltype(str_value.length())
 {
 	cout << str_value << endl;
@@ -41,7 +39,7 @@ auto print_ip(T str_value) -> decltype(str_value.length())
 
 // This used for std::vector and std::list.
 template<typename T>
-typename std::enable_if_t<std::is_same<T, std::vector<typename T::value_type>>::value || std::is_same<T, std::list<typename T::value_type>>::value, void>
+enable_if_t<is_same<T, vector<typename T::value_type>>::value || is_same<T, std::list<typename T::value_type>>::value, void>
 print_ip(T cont_value)
 {
 	size_t n = cont_value.size();
