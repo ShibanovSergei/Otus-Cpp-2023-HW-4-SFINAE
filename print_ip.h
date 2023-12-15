@@ -7,7 +7,9 @@ using namespace std;
 
 // This used for int types.
 template<typename T>
-typename enable_if_t<is_signed<T>::value || is_signed<T>::value, void>
+typename 
+enable_if_t
+<is_signed<T>::value || is_signed<T>::value, void>
 print_ip(T int_value)
 {
 	string result = "";
