@@ -42,22 +42,11 @@ template<typename T>
 enable_if_t<is_same<T, vector<typename T::value_type>>::value || is_same<T, std::list<typename T::value_type>>::value, void>
 print_ip(T cont_value)
 {
-	size_t n = cont_value.size();
-
-	std::string result = "";
-	char buffer[50]{};
-	for (auto it = cont_value.cbegin(); it != cont_value.cend(); it++)
+	std::string dot = "";
+	for (auto &v : cont_value)
 	{
-		_itoa_s(*it, buffer, 10);
-		buffer[49] = '\0';
-		result = result.append(buffer).append(".");
+		cout << dot << v;
+		dot = ".";
 	}
-
-	if (result.size() > 0)
-	{
-		if (result.ends_with('.'))
-			result.erase(result.end() - 1);
-	}
-
-	cout << result << endl;
+	cout << endl;
 }
