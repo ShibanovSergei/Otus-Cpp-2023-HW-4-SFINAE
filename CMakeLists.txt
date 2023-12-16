@@ -25,7 +25,6 @@ else ()
     )
 endif()
 
-
 install(TARGETS HW_04_cli RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
