@@ -7,7 +7,7 @@ project(HW_04_SFINAE VERSION ${PROJECT_VESRION})
 
 #configure_file(version.h.in version.h)
 
-add_executable (hw_04cli "main.cpp" "main.h" "print_ip.h" )
+add_executable (HW_04_cli "main.cpp" "main.h" "print_ip.h" )
 
 set_target_properties(HW_04_cli PROPERTIES
     CXX_STANDARD 20
