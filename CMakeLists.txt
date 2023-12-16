@@ -3,29 +3,29 @@
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
-project(HW_04_SFINAE VERSION ${PROJECT_VESRION})
+project(print_ip VERSION ${PROJECT_VESRION})
 
 #configure_file(version.h.in version.h)
 
-add_executable (HW_04_cli "main.cpp" "main.h" "print_ip.h" )
+add_executable (print_ip "main.cpp" "main.h" "print_ip.h" )
 
-set_target_properties(HW_04_cli PROPERTIES
+set_target_properties(print_ip PROPERTIES
     CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
 )
-target_include_directories(HW_04_cli PRIVATE "${CMAKE_BINARY_DIR}")
+target_include_directories(print_ip PRIVATE "${CMAKE_BINARY_DIR}")
 
 if (MSVC)
-    target_compile_options(HW_04_cli PRIVATE
+    target_compile_options(print_ip PRIVATE
         /W4
     )
 else ()
-    target_compile_options(HW_04_cli PRIVATE
+    target_compile_options(print_ip PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 endif()
 
-install(TARGETS HW_04_cli RUNTIME DESTINATION bin)
+install(TARGETS print_ip RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
