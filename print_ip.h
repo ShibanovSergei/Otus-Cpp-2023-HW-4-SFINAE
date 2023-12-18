@@ -12,7 +12,7 @@ using namespace std;
 /// <param name="int_value">int type value, whose contents will be output byte by byte (MSB first).</param>
 /// <returns>void, expression is used to implement SFINAE.</returns>
 template<typename T>
-enable_if_t<is_signed<T>::value || is_signed<T>::value, void>
+enable_if_t<is_signed<T>::value || is_unsigned<T>::value, void>
 print_ip(T int_value)
 {
 	string result = "";
